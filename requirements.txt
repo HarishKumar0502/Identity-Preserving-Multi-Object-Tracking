@@ -1,0 +1,24 @@
+# Versions verified in the development environment (Python 3.14.7, Windows 11).
+# Do NOT reinstall torch from this file if you already have a CUDA build; see README.
+torch>=2.1            # verified 2.14.1 (+cpu)
+torchvision>=0.16     # verified 0.29.1
+numpy>=1.24           # verified 2.5.2
+scipy>=1.10           # verified 1.18.1  (Hungarian: linear_sum_assignment)
+opencv-python>=4.8    # verified 5.0.0.93
+ultralytics>=8.3      # verified 8.4.175 (YOLO person detector)
+fastapi>=0.110        # verified 0.136.0
+uvicorn>=0.29         # verified 0.45.0
+python-multipart>=0.0.9   # verified 0.0.27 (multipart upload)
+psutil>=5.9           # verified 7.2.2
+# ONNX export / inference
+onnx>=1.15            # verified 1.23.2
+onnxruntime>=1.17     # verified 1.31.0 (CPU); use onnxruntime-gpu for CUDA EP
+# Tests
+pytest>=8             # verified 8.4.2
+httpx>=0.27           # verified 0.28.1 (FastAPI TestClient)
+# Optional GPU acceleration for ReID (auto-detected; see README "TensorRT").
+# Verified: tensorrt-cu12==11.4.0.106 + cuda-python==12.9.7 (Python 3.14 wheels exist
+# only for TensorRT >= 11.1). Installed with --target into .gpu_runtime/ here because
+# C: lacked space for the 3.2 GB TensorRT libraries:
+#   pip install --target .gpu_runtime tensorrt-cu12==11.4.0.106 cuda-python==12.9.7
+# A CUDA build of torch is NOT required for TensorRT.

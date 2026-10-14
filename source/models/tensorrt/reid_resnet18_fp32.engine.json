@@ -1,0 +1,51 @@
+{
+  "tensorrt_version": "11.4.0.106",
+  "precision": "fp32",
+  "onnx_file": "reid_resnet18.onnx",
+  "onnx_sha256": "688a6dbc4b00c3c904ff3abef274ba5fc2523543646493fd54b59bed5fa96904",
+  "input_hw": [
+    256,
+    128
+  ],
+  "min_batch": 1,
+  "opt_batch": 8,
+  "max_batch": 32,
+  "gpu_name": "NVIDIA GeForce RTX 2050",
+  "compute_capability": "8.6",
+  "engine_file": "reid_resnet18_fp32.engine",
+  "engine_sha256": "4775cf6a29e2d1e6bc35fba9584ed6824d25d7fb9c9ef06cc0e07bb4e0e4752e",
+  "engine_bytes": 46942988,
+  "graph_file": "reid_resnet18.onnx",
+  "input_name": "input",
+  "output_name": "embedding",
+  "driver_cuda": "12.5",
+  "build_time_s": 16.94,
+  "built_at": "2026-10-13T12:13:31+0530",
+  "validation_vs_pytorch_cpu": {
+    "random_b1": {
+      "batch": 1,
+      "min_cosine": 1.0,
+      "max_abs_diff": 1.2665987014770508e-07
+    },
+    "random_b4": {
+      "batch": 4,
+      "min_cosine": 0.9999998211860657,
+      "max_abs_diff": 1.1920928955078125e-07
+    },
+    "random_b16": {
+      "batch": 16,
+      "min_cosine": 0.9999998807907104,
+      "max_abs_diff": 1.6391277313232422e-07
+    },
+    "random_b32": {
+      "batch": 32,
+      "min_cosine": 0.9999997615814209,
+      "max_abs_diff": 2.0116567611694336e-07
+    },
+    "probe_crops": {
+      "batch": 8,
+      "min_cosine": 0.9999998807907104,
+      "max_abs_diff": 2.0116567611694336e-07
+    }
+  }
+}
