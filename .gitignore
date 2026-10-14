@@ -4,12 +4,6 @@ __pycache__/
 uploads/
 outputs/
 samples/*.mp4
-# Model artifacts (large binaries; see README "Models")
-source/models/**/*.pt
-source/models/**/*.pth
-source/models/**/*.onnx
-source/models/**/*.engine
-*.pth
 .gpu_runtime/
 # Local configuration (copy .env.example to .env)
 .env
